@@ -11,7 +11,15 @@ try
     int num2 = Convert.ToInt32(Console.ReadLine());
     Console.WriteLine("\n Resultado de la division:" + num1/num2);
 }
-catch
+catch (DivideByZeroException)
 {
-    Console.WriteLine("\n No se puede dividir en 0");
+    Console.WriteLine("Error: ¡no se puede dividir en cero!");
+}
+catch (FormatException)
+{
+    Console.WriteLine("¡Error de formato (ingrese un número válido)!");
+}
+catch (Exception e)
+{
+    Console.WriteLine($"Error encontrado: {e.Message}");
 }
